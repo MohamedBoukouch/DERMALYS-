@@ -3,1274 +3,978 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>YSF_PARFUMS — عطور فاخرة على مقاسك</title>
-  <meta name="description" content="اصنع طقمك من العطور الفاخرة بنفسك. توصيل مجاني، دفع عند الاستلام."/>
+  <title>Biopalis Dermalys — عناية متخصصة للبشرة المتأثرة بالبهاق</title>
+  <meta name="description" content="ديرماليس من بيوباليس — عناية متخصصة للبشرة المتأثرة بالبهاق. توصيل مجاني في المغرب، الدفع عند الاستلام."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --ink:     #1a1208;
-      --ink-mid: #5a4a30;
-      --ink-lt:  #9a8672;
-      --gold:    #C4922A;
-      --gold-lt: #D4A84A;
-      --gold-dk: #A07818;
-      --pale:    #FDF8F0;
-      --tint:    #FEF3DC;
-      --cream:   #FDFAF4;
-      --white:   #ffffff;
-      --border:  rgba(196,146,42,.22);
-      --grad:    linear-gradient(135deg, #D4A84A 0%, #A07818 100%);
-      --shadow:  0 8px 32px rgba(160,120,24,.12);
-      --r:       16px;
-      --r-sm:    10px;
-      --green:        #16a34a;
-      --green-lt:     #dcfce7;
-      --green-border: rgba(22,163,74,.35);
+      --blue:      #5BC4E5;
+      --blue-dk:   #3AACCF;
+      --blue-lt:   #E8F8FD;
+      --blue-mid:  #A8E3F3;
+      --navy:      #1A3A5C;
+      --white:     #ffffff;
+      --off:       #F4FBFE;
+      --gray-lt:   #EFF7FA;
+      --gray-mid:  #7BA8BC;
+      --ink:       #1A2F3A;
+      --border:    rgba(91,196,229,.2);
+      --green:     #16a34a;
+      --shadow-sm: 0 2px 12px rgba(91,196,229,.18);
+      --shadow-md: 0 8px 32px rgba(91,196,229,.22);
+      --r: 14px; --r-sm: 9px;
     }
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: 'Cairo', system-ui, sans-serif;
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      direction: rtl;
-    }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--pale); }
-    ::-webkit-scrollbar-thumb { background: var(--gold-lt); border-radius: 3px; }
-    .display { font-family: 'Cairo', serif; font-weight: 800; line-height: 1.2; }
+    body { background: var(--off); color: var(--ink); font-family: 'Cairo', system-ui, sans-serif; line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; direction: rtl; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 3px; }
 
-    /* ── HEADER ── */
-    header {
-      background: var(--ink);
-      padding: 10px 16px;
+    /* ANNOUNCE */
+    .announce-bar { background: var(--blue); padding: 9px 16px; text-align: center; }
+    .announce-bar p { color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .3px; }
+    .announce-bar span { color: rgba(255,255,255,.5); margin: 0 8px; }
+
+    /* NAV */
+    nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo-mark { width: 38px; height: 38px; background: var(--blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: #fff; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo-name { font-weight: 800; font-size: 15px; color: var(--navy); }
+    .nav-logo-sub  { font-size: 9px; color: var(--gray-mid); letter-spacing: 1px; }
+    .nav-cta { background: var(--blue); color: #fff; border: none; border-radius: var(--r-sm); padding: 9px 18px; font-family: 'Cairo', sans-serif; font-size: 12px; font-weight: 800; cursor: pointer; transition: background .2s; text-decoration: none; display: inline-block; }
+    .nav-cta:hover { background: var(--blue-dk); }
+
+    /* WRAP */
+    .wrap { max-width: 480px; margin: 0 auto; padding: 0 16px; }
+
+    /* SECTION TITLES */
+    .section-label { font-size: 10px; font-weight: 700; color: var(--blue-dk); letter-spacing: 2px; text-align: center; margin-bottom: 8px; text-transform: uppercase; }
+    .section-title { font-size: clamp(1.4rem, 6vw, 1.9rem); font-weight: 900; color: var(--navy); text-align: center; line-height: 1.2; margin-bottom: 8px; }
+    .section-sub   { font-size: 13px; color: var(--gray-mid); text-align: center; max-width: 340px; margin: 0 auto 28px; line-height: 1.6; }
+    .section-wrap  { padding: 40px 0 0; }
+    .divider { height: 1px; background: var(--border); margin: 28px 0; }
+
+    /* ══ HERO SLIDER ══ */
+    .hero-slider { position: relative; width: 100%; overflow: hidden; min-height: 460px; background: #1A3A5C; }
+    .slides-track { display: flex; transition: transform .65s cubic-bezier(.4,0,.2,1); will-change: transform; height: 100%; }
+    .slide {
+      flex: 0 0 100%; width: 100%; position: relative;
+      min-height: 460px; display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .slide > img.slide-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center top; display: block;
+    }
+    .slide-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(26,58,92,.5) 0%, rgba(26,58,92,.15) 45%, rgba(26,58,92,.65) 100%);
+      z-index: 1;
+    }
+    /* Slider arrows */
+    .slider-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; display: flex; justify-content: space-between; width: 100%; padding: 0 10px; pointer-events: none; }
+    .s-btn {
+      pointer-events: auto; width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(255,255,255,.22); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.4); color: #fff; font-size: 0;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s;
+    }
+    .s-btn:hover { background: rgba(255,255,255,.4); }
+    .s-btn svg { display: block; }
+    .slider-dots { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 7px; }
+    .s-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.4); cursor: pointer; transition: all .3s; border: none; padding: 0; }
+    .s-dot.active { background: #fff; width: 24px; border-radius: 4px; }
+
+    /* SP BAR */
+    .sp-bar { background: var(--white); border-bottom: 1px solid var(--border); padding: 10px 16px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .sp-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--navy); }
+    .sp-sep  { width: 4px; height: 4px; border-radius: 50%; background: var(--blue-mid); flex-shrink: 0; }
+
+    /* ══ PROBLEM SECTION — light style ══ */
+    .problem-section {
+      background: var(--off);
+      padding: 48px 20px 52px;
       text-align: center;
-      position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid var(--border);
     }
-    header p { color: var(--gold-lt); font-size: 12px; font-weight: 700; line-height: 1.5; }
-    header span { color: rgba(255,255,255,.4); margin: 0 6px; }
-
-    /* ── HERO SLIDER ── */
-    .hero-wrapper { background: var(--ink); }
-    .hero-main {
-      position: relative; width: 100%; aspect-ratio: 1/1;
-      overflow: hidden; background: var(--ink); max-height: 400px;
-    }
-    .hero-main img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-      transition: opacity .35s ease;
-    }
-    .hero-thumbs {
-      display: flex; gap: 8px; padding: 8px 12px;
-      overflow-x: auto; scrollbar-width: none;
-    }
-    .hero-thumbs::-webkit-scrollbar { display: none; }
-    .hero-thumb {
-      flex-shrink: 0; width: 52px; height: 52px;
-      border-radius: 8px; overflow: hidden;
-      border: 2px solid transparent; cursor: pointer;
-      opacity: .55; transition: opacity .25s, border-color .25s;
-      background: none; padding: 0;
-    }
-    .hero-thumb.active { border-color: var(--gold-lt); opacity: 1; }
-    .hero-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
-
-    .wrap { max-width: 480px; margin: 0 auto; padding: 0 14px; }
-
-    /* ── PRODUCT INFO ── */
-    .product-info { padding: 20px 0 0; }
-    .eyebrow { font-size: 11px; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
-    .product-title { font-size: clamp(1.7rem, 7vw, 2.6rem); color: var(--ink); margin-bottom: 10px; }
-
-    .trust-pills {
-      display: flex; gap: 6px; flex-wrap: wrap;
-      margin-bottom: 16px; justify-content: center; align-items: center;
-    }
-    .trust-pill {
-      display: inline-flex; align-items: center; gap: 5px;
-      padding: 5px 12px; background: var(--tint);
-      border: 1px solid var(--border); border-radius: 99px;
-      font-size: 11px; font-weight: 700; color: var(--gold-dk);
-    }
-
-    .divider { height: 1px; background: var(--border); margin: 16px 0; }
-    .section-title { font-size: 12px; font-weight: 800; color: var(--ink-mid); margin-bottom: 12px; text-align: right; }
-
-    /* ══════════════════════════════════════
-       PACK CARDS — REDESIGNED FOR MOBILE
-    ══════════════════════════════════════ */
-    .pack-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
-
-    .pack-card {
-      position: relative;
-      border: 2px solid var(--border);
-      border-radius: 16px;
+    .problem-section .section-label { color: var(--blue-dk); }
+    .problem-section .section-title { color: var(--navy); }
+    .problem-section .section-sub   { color: var(--gray-mid); }
+    .problem-list { max-width: 440px; margin: 0 auto 28px; display: flex; flex-direction: column; gap: 10px; }
+    .problem-item {
       background: var(--white);
-      cursor: pointer;
-      transition: all .25s;
-      user-select: none;
-      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex; align-items: center; gap: 14px;
+      flex-direction: row-reverse; text-align: right;
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s, box-shadow .2s;
     }
-    .pack-card:hover { border-color: var(--gold-lt); }
-    .pack-card.selected { border-color: var(--gold); background: var(--tint); box-shadow: 0 0 0 1px var(--gold); }
-
-    /* Radio circle — top-left in LTR = top-right in RTL */
-    .pack-radio {
-      
-    }
-    .pack-card.selected .pack-radio { background: var(--gold); border-color: var(--gold); }
-    .pack-radio::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--white); display: none; }
-    .pack-card.selected .pack-radio::after { display: block; }
-
-    /* Badge — top right */
-    .pack-badge {
-      position: absolute; top: 0; right: 0;
-      background: var(--ink); color: var(--gold-lt);
-      font-size: 10px; font-weight: 800;
-      padding: 4px 12px 4px 14px;
-      border-radius: 0 14px 0 14px;
-      z-index: 2;
-    }
-
-    /* ── PACK INNER LAYOUT ── */
-    .pack-inner {
-      display: grid;
-      grid-template-columns: 88px 1fr;
-      gap: 0;
-      min-height: 100px;
-    }
-
-    /* LEFT: image block */
-    .pack-img-col {
-      position: relative;
-      background: var(--pale);
-      border-left: 1px solid var(--border); /* RTL: border on left = divider on right side of image */
+    .problem-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .problem-icon {
+      width: 42px; height: 42px; border-radius: 12px;
+      background: var(--blue-lt); flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
-      padding: 12px 8px;
     }
-    .pack-img-col img {
-      width: 72px; height: 72px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 1.5px solid var(--border);
+    .problem-icon svg { display: block; }
+    .problem-item-text { font-size: 13px; color: var(--ink); font-weight: 700; line-height: 1.5; }
+    .problem-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue); color: #fff; border-radius: var(--r);
+      padding: 15px 32px; font-family: 'Cairo', sans-serif; font-size: 14px; font-weight: 800;
+      text-decoration: none; box-shadow: 0 8px 24px rgba(91,196,229,.4);
+      transition: background .2s, transform .15s;
+    }
+    .problem-cta:hover { background: var(--blue-dk); transform: translateY(-1px); }
+
+    /* ══ BEFORE / AFTER — fixed image, moving line ══ */
+    .ba-section { background: var(--gray-lt); padding: 48px 16px; overflow: hidden; }
+    .compare-container {
+      position: relative; width: 100%; max-width: 480px; margin: 0 auto;
+      aspect-ratio: 3/4; overflow: hidden; user-select: none;
+      border-radius: 20px; box-shadow: var(--shadow-md);
+      touch-action: none;
+    }
+    /* Both images fill 100% — clip is on a wrapper */
+    .ba-img-base, .ba-img-overlay { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* Overlay image clipped from right side */
+    .ba-clip {
+      position: absolute; top: 0; left: 0; bottom: 0;
+      overflow: hidden;
+      /* width controlled by JS */
+      width: 50%;
+    }
+    .ba-clip img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    /* The divider line + handle */
+    .ba-divider {
+      position: absolute; top: 0; bottom: 0;
+      width: 3px; background: #fff;
+      left: 50%; transform: translateX(-50%);
+      z-index: 10; cursor: ew-resize;
+    }
+    .ba-handle {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px; height: 50px; border-radius: 50%;
+      background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,.18);
+      display: flex; align-items: center; justify-content: center;
+      cursor: ew-resize;
+    }
+    .ba-handle svg { display: block; }
+    .ba-label {
+      position: absolute; bottom: 16px; z-index: 5;
+      color: #fff; font-size: 12px; font-weight: 800; letter-spacing: 1.5px;
+      padding: 6px 13px; background: rgba(26,58,92,.6);
+      backdrop-filter: blur(6px); border-radius: 8px;
+    }
+    .ba-label.lbl-before { right: 14px; }
+    .ba-label.lbl-after  { left: 14px; }
+
+    /* BENEFITS */
+    .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 32px; }
+    .benefit-card  { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 16px 14px; text-align: center; }
+    .benefit-icon  { width: 44px; height: 44px; background: var(--blue-lt); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
+    .benefit-title { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 3px; }
+    .benefit-sub   { font-size: 11px; color: var(--gray-mid); line-height: 1.5; }
+
+    /* INGREDIENTS */
+    .ingr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 32px; }
+    .ingr-card { background: var(--blue-lt); border: 1px solid var(--border); border-radius: var(--r); padding: 14px; display: flex; gap: 10px; align-items: flex-start; flex-direction: row-reverse; text-align: right; }
+    .ingr-icon { width: 36px; height: 36px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ingr-title { font-size: 12px; font-weight: 800; color: var(--navy); margin-bottom: 2px; }
+    .ingr-sub   { font-size: 10px; color: var(--gray-mid); line-height: 1.4; }
+
+    /* ══ AVIS — images only, auto-scroll ══ */
+    .avis-section { background: var(--white); padding: 48px 0 40px; overflow: hidden; }
+    .avis-outer { overflow: hidden; position: relative; }
+    .avis-track {
+      display: flex; gap: 14px; padding: 8px 16px;
+      width: max-content;
+      animation: avis-scroll 24s linear infinite;
+    }
+    .avis-track:hover { animation-play-state: paused; }
+    @keyframes avis-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .avis-card {
+      flex-shrink: 0; width: 200px; height: 340px;
+      border-radius: 18px; overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,.13);
+      background: #ECE5DD;
+    }
+    .avis-card img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top;
       display: block;
     }
-    .pack-img-placeholder {
-      width: 72px; height: 72px;
-      border-radius: 10px;
-      border: 1.5px dashed var(--gold-lt);
-      background: rgba(196,146,42,.06);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px;
-    }
 
-    /* RIGHT: text + price block */
-    .pack-text-col {
-      padding: 14px 42px 12px 14px; /* right padding = space for radio */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 4px;
-      text-align: right;
-    }
-    /* when badge exists, push top padding up */
-    .pack-card .pack-text-col { padding-top: 28px; }
-    .pack-card:not([data-badge]) .pack-text-col,
-    .pack-card[data-badge="false"] .pack-text-col { padding-top: 14px; }
+    /* PACKS */
+    .packs-wrap { padding: 40px 0 0; }
+    .pack-grid  { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .pack-card  { border: 2px solid var(--border); border-radius: 18px; background: var(--white); cursor: pointer; transition: all .25s; overflow: hidden; position: relative; }
+    .pack-card:hover  { border-color: var(--blue); box-shadow: var(--shadow-sm); }
+    .pack-card.chosen { border-color: var(--blue-dk); box-shadow: 0 0 0 1px var(--blue-dk); }
+    .pack-badge { position: absolute; top: 0; right: 0; background: var(--blue); color: #fff; font-size: 10px; font-weight: 800; padding: 4px 14px 4px 12px; border-radius: 0 16px 0 14px; }
+    .pack-inner { display: grid; grid-template-columns: 90px 1fr; }
+    .pack-img-col { background: var(--blue-lt); border-left: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 14px 10px; min-height: 110px; }
+    .pack-img-col img { width: 70px; height: 70px; object-fit: contain; }
+    .pack-img-ph { width: 70px; height: 70px; border-radius: 10px; border: 2px dashed var(--blue-mid); background: rgba(91,196,229,.08); display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .pack-text-col { padding: 28px 14px 14px 40px; display: flex; flex-direction: column; gap: 5px; text-align: right; }
+    .pack-name  { font-size: 16px; font-weight: 900; color: var(--navy); }
+    .pack-desc  { font-size: 12px; color: var(--gray-mid); }
+    .pack-price-row { display: flex; align-items: center; gap: 8px; margin-top: 4px; flex-wrap: wrap; justify-content: flex-end; }
+    .pack-price { font-size: 20px; font-weight: 900; color: var(--navy); }
+    .pack-old   { font-size: 12px; color: var(--gray-mid); text-decoration: line-through; }
+    .pack-save  { font-size: 10px; font-weight: 800; background: #E8F8FD; color: var(--blue-dk); padding: 2px 7px; border-radius: 5px; }
+    .pack-radio { position: absolute; top: 14px; left: 14px; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border); background: var(--gray-lt); display: flex; align-items: center; justify-content: center; transition: all .2s; }
+    .pack-card.chosen .pack-radio { background: var(--blue-dk); border-color: var(--blue-dk); }
+    .pack-radio::after { content:''; width: 8px; height: 8px; border-radius: 50%; background: #fff; display: none; }
+    .pack-card.chosen .pack-radio::after { display: block; }
 
-    .pack-name {
-      font-size: 15px; font-weight: 800;
-      color: var(--ink); line-height: 1.25;
-    }
-    .pack-type-pill {
-      display: inline-flex; align-items: center; gap: 4px;
-      background: rgba(196,146,42,.12);
-      border: 1px solid rgba(196,146,42,.25);
-      border-radius: 6px;
-      padding: 2px 8px;
-      font-size: 11px; font-weight: 700; color: var(--gold-dk);
-      align-self: flex-end;
-      width: fit-content;
-    }
-    .pack-sub { font-size: 11px; color: var(--ink-lt); line-height: 1.4; }
-
-    .pack-price-row {
-      display: flex; align-items: center; gap: 6px;
-      justify-content: flex-end; flex-wrap: wrap;
-      margin-top: 4px;
-    }
-    .pack-price-now { font-size: 18px; font-weight: 900; color: var(--ink); }
-    .pack-price-old { font-size: 11px; color: var(--ink-lt); text-decoration: line-through; }
-    .pack-price-save {
-      font-size: 10px; font-weight: 800; color: var(--gold-dk);
-      background: rgba(196,146,42,.12); padding: 2px 6px;
-      border-radius: 4px;
-    }
-
-    /* dots row */
-    .pack-dots-row {
-      padding: 8px 14px 10px;
-      border-top: 1px dashed var(--border);
-      display: flex; gap: 5px; flex-wrap: wrap;
-      justify-content: flex-end; align-items: center;
-    }
-    .pack-dots-label { font-size: 10px; color: var(--ink-lt); font-weight: 600; margin-left: auto; }
-    .pack-dot {
-      width: 20px; height: 20px; border-radius: 50%;
-      border: 1.5px dashed var(--gold-lt);
-      background: rgba(196,146,42,.06);
-      display: flex; align-items: center; justify-content: center;
-    }
-
-    /* ── PICKER ── */
-    .picker-section { margin-bottom: 24px; }
-    .selection-progress {
-      background: var(--pale); border: 1px solid var(--border);
-      border-radius: 12px; padding: 10px 14px; margin-bottom: 14px;
-      display: flex; align-items: center; justify-content: space-between;
-      font-size: 12px; color: var(--ink-mid); flex-direction: row-reverse;
-    }
-    .progress-bar-wrap { flex: 1; margin: 0 10px; height: 5px; background: rgba(196,146,42,.2); border-radius: 99px; overflow: hidden; }
-    .progress-bar-fill { height: 100%; background: var(--grad); border-radius: 99px; transition: width .4s ease; }
-
-    /* ── SLOTS ── */
-    .picker-slots { display: flex; flex-direction: column; gap: 10px; }
-
-    .picker-slot {
-      border: 2px dashed var(--border);
-      border-radius: var(--r); background: var(--pale);
-      overflow: hidden; transition: border-color .25s, background .25s, box-shadow .25s;
-    }
-    .picker-slot.filled {
-      border-style: solid; border-color: var(--green);
-      background: var(--green-lt); box-shadow: 0 0 0 1px var(--green-border);
-    }
-    .picker-slot.open {
-      border-style: solid; border-color: var(--gold);
-      background: var(--white); box-shadow: 0 0 0 1px rgba(196,146,42,.25);
-    }
-    .picker-slot.locked { opacity: .45; pointer-events: none; }
-
-    .slot-header {
-      display: flex; align-items: center; gap: 10px;
-      padding: 12px 14px; cursor: pointer; min-height: 64px;
-      flex-direction: row-reverse; user-select: none;
-    }
-    .slot-num {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--gold-lt); color: var(--white);
-      font-size: 13px; font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; transition: background .25s;
-    }
-    .picker-slot.filled .slot-num { background: var(--green); }
-    .slot-preview {
-      width: 44px; height: 44px; border-radius: 9px;
-      object-fit: cover; flex-shrink: 0;
-      border: 1.5px solid var(--green-border);
-    }
-    .slot-plus-btn {
-      width: 44px; height: 44px; border-radius: 9px;
-      border: 2px dashed var(--gold-lt);
-      background: rgba(196,146,42,.07);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; transition: background .2s;
-    }
-    .slot-header:hover .slot-plus-btn { background: rgba(196,146,42,.15); }
-    .slot-info { flex: 1; min-width: 0; text-align: right; }
-    .slot-name { font-size: 13px; font-weight: 700; color: var(--ink); }
-    .slot-sub  { font-size: 11px; color: var(--ink-lt); margin-top: 1px; }
-    .slot-badge {
-      font-size: 10px; font-weight: 800;
-      padding: 3px 9px; border-radius: 99px;
-      background: var(--tint); color: var(--gold-dk);
-      border: 1px solid var(--border); flex-shrink: 0; white-space: nowrap;
-      transition: background .25s, color .25s, border-color .25s;
-    }
-    .slot-badge.done { background: var(--green); color: #fff; border-color: var(--green); }
-    .slot-chevron { flex-shrink: 0; color: var(--gold-lt); transition: transform .3s; }
-    .picker-slot.open .slot-chevron { transform: rotate(180deg); }
-
-    .slot-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s cubic-bezier(.25,1,.5,1); }
-    .picker-slot.open .slot-panel { grid-template-rows: 1fr; }
-    .slot-panel-inner { overflow: hidden; }
-
-    /* ── PERFUME GRID ── */
-    .perfume-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 8px; padding: 6px 12px 6px;
-    }
-    .perfume-card {
-      border: 1.5px solid var(--border); border-radius: 12px;
-      background: var(--white); cursor: pointer; overflow: hidden;
-      transition: all .2s; padding: 8px; text-align: center;
-    }
-    .perfume-card:hover { border-color: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(196,146,42,.15); }
-    .perfume-card.selected {
-      border-color: var(--green); background: var(--green-lt);
-      box-shadow: 0 0 0 1.5px var(--green);
-    }
-    .perfume-card img {
-      width: 100%; aspect-ratio: 1/1; object-fit: cover;
-      border-radius: 7px; display: block; margin-bottom: 6px;
-    }
-    .perfume-card-name { font-size: 11px; font-weight: 700; color: var(--ink); line-height: 1.3; }
-    .perfume-card-vol  { font-size: 10px; color: var(--ink-lt); margin-top: 2px; }
-    .perfume-check {
-      width: 18px; height: 18px; border-radius: 50%;
-      background: var(--green);
-      display: none; align-items: center; justify-content: center;
-      margin: 5px auto 0;
-    }
-    .perfume-card.selected .perfume-check { display: flex; }
-    .perfume-check svg { width: 10px; height: 10px; }
-
-    /* ── CUSTOM INPUT ── */
-    .custom-perfume-wrap {
-      margin: 6px 12px 12px;
-      background: var(--pale);
-      border: 1.5px dashed var(--border);
-      border-radius: 12px; padding: 12px;
-      transition: border-color .25s, background .25s;
-    }
-    .custom-perfume-wrap.confirmed {
-      border-style: solid; border-color: var(--green); background: var(--green-lt);
-    }
-    .custom-perfume-label {
-      font-size: 11px; font-weight: 800; color: var(--gold-dk);
-      margin-bottom: 7px; text-align: right; display: block;
-    }
-    .custom-perfume-wrap.confirmed .custom-perfume-label { color: var(--green); }
-    .custom-perfume-row { display: flex; gap: 7px; flex-direction: row-reverse; }
-    .custom-perfume-input {
-      flex: 1; border: 1.5px solid rgba(196,146,42,.3);
-      border-radius: 9px; padding: 9px 11px;
-      font-family: 'Cairo', sans-serif;
-      font-size: 13px; font-weight: 500; color: var(--ink);
-      background: var(--white); outline: none;
-      transition: border-color .2s, box-shadow .2s;
-      text-align: right; direction: rtl;
-    }
-    .custom-perfume-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(196,146,42,.12); }
-    .custom-perfume-input::placeholder { color: var(--ink-lt); }
-    .custom-perfume-btn {
-      background: var(--ink); color: var(--gold-lt);
-      border: none; border-radius: 9px; padding: 9px 14px;
-      font-family: 'Cairo', sans-serif; font-size: 12px; font-weight: 800;
-      cursor: pointer; white-space: nowrap; transition: opacity .2s;
-    }
-    .custom-perfume-btn:hover { opacity: .85; }
-    .custom-perfume-btn.confirmed-btn { background: var(--green); color: #fff; }
-
-    /* ── NEXT BUTTON ── */
-    .slot-next-wrap { padding: 8px 12px 14px; display: flex; justify-content: flex-end; }
-    .slot-next-btn {
-      background: var(--grad); color: var(--white);
-      border: none; border-radius: 11px; padding: 10px 22px;
-      font-family: 'Cairo', sans-serif; font-size: 13px; font-weight: 800;
-      cursor: pointer; display: flex; align-items: center; gap: 8px;
-      transition: opacity .2s, transform .15s;
-      box-shadow: 0 4px 12px rgba(160,120,24,.25);
-    }
-    .slot-next-btn:hover { opacity: .9; }
-    .slot-next-btn:active { transform: scale(.97); }
-    .slot-next-btn:disabled { opacity: .35; cursor: not-allowed; transform: none; }
-
-    /* ── STOCK ── */
-    .stock-bar {
-      background: var(--tint); border: 1px dashed var(--gold);
-      border-radius: 12px; padding: 10px 14px;
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 16px; flex-direction: row-reverse;
-    }
+    /* STOCK / COUNTDOWN */
+    .stock-bar { background: #FEF9EC; border: 1px dashed #D4A84A; border-radius: 12px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-direction: row-reverse; }
     .ping-wrap { position: relative; width: 14px; height: 14px; flex-shrink: 0; }
-    .ping-ring { position: absolute; inset: 0; border-radius: 50%; background: var(--gold); opacity: .4; animation: ping 1.5s ease infinite; }
-    .ping-dot  { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--gold-dk); margin: 3px; }
-    @keyframes ping { 0%{transform:scale(1);opacity:.4} 75%,100%{transform:scale(2.2);opacity:0} }
-    .stock-text { flex: 1; font-size: 12px; font-weight: 800; color: var(--ink); text-align: right; }
-    .stock-track { width: 60px; height: 6px; background: rgba(196,146,42,.2); border-radius: 99px; overflow: hidden; flex-shrink: 0; }
-    .stock-fill {
-      width: 35%; height: 100%; border-radius: 99px;
-      background-image: repeating-linear-gradient(45deg, var(--gold-lt) 0, var(--gold-lt) 3px, var(--gold-dk) 3px, var(--gold-dk) 6px);
-      background-size: 12px 12px; animation: stripes 1.2s linear infinite;
-    }
-    @keyframes stripes { to { background-position: 12px 0; } }
+    .ping-ring { position: absolute; inset: 0; border-radius: 50%; background: #D4A84A; opacity: .4; animation: ping 1.5s ease infinite; }
+    .ping-dot  { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #A07818; margin: 3px; }
+    @keyframes ping { 0%{transform:scale(1);opacity:.4}75%,100%{transform:scale(2.2);opacity:0} }
+    .stock-text { font-size: 12px; font-weight: 700; color: var(--ink); flex: 1; text-align: right; }
+    .countdown-bar { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font-size: 12px; color: var(--gray-mid); flex-direction: row-reverse; }
+    .countdown-bar strong { color: var(--blue-dk); font-size: 14px; font-weight: 900; direction: ltr; display: inline-block; }
 
-    .countdown-bar {
-      background: var(--pale); border: 1px dashed var(--border);
-      border-radius: 12px; padding: 10px 14px;
-      display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
-      font-size: 12px; color: var(--ink-mid); flex-direction: row-reverse;
-    }
-    .countdown-bar strong { color: var(--gold-dk); font-size: 14px; direction: ltr; display: inline-block; }
+    /* FEAT GRID */
+    .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
+    .feat-card  { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 14px; display: flex; gap: 10px; align-items: flex-start; flex-direction: row-reverse; text-align: right; }
+    .feat-icon  { width: 34px; height: 34px; border-radius: 50%; background: var(--blue-lt); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .feat-title { font-size: 12px; font-weight: 800; color: var(--navy); }
+    .feat-sub   { font-size: 10px; color: var(--gray-mid); margin-top: 2px; line-height: 1.5; }
 
-    /* ── FEATURES ── */
-    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 24px; }
-    .feature-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: var(--r); padding: 12px;
-      display: flex; align-items: flex-start;
-      gap: 9px; flex-direction: row-reverse; text-align: right;
-    }
-    .feature-icon {
-      width: 32px; height: 32px; border-radius: 9px;
-      background: var(--tint);
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-    .feature-title { font-size: 12px; font-weight: 800; color: var(--ink); }
-    .feature-sub { font-size: 10px; color: var(--ink-lt); margin-top: 2px; line-height: 1.5; }
-
-    /* ── SOCIAL PROOF ── */
-    .social-proof {
-      background: var(--tint); border: 1px dashed var(--gold);
-      border-radius: 12px; padding: 10px 14px;
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 18px; flex-direction: row-reverse;
-    }
-    .avatar-stack { display: flex; padding-left: 8px; }
-    .avatar { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--white); overflow: hidden; margin-left: -8px; }
-    .avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .sp-text { font-size: 12px; font-weight: 800; color: var(--ink); text-align: right; }
-
-    /* ── ORDER FORM ── */
-    .order-form {
-      background: var(--white); border: 1.5px solid var(--gold);
-      border-radius: 20px; padding: 20px 16px 18px;
-      box-shadow: var(--shadow); margin-bottom: 28px;
-    }
-    .form-title { text-align: center; font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
-    .form-sub { text-align: center; font-size: 12px; color: var(--ink-lt); margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px dashed var(--border); }
-    .field-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
-    .field-wrap { position: relative; }
-    .field-wrap label { display: block; font-size: 11px; font-weight: 800; color: var(--gold-dk); margin-bottom: 4px; text-align: right; }
-    .field-wrap input {
-      width: 100%; border: 1.5px solid rgba(196,146,42,.3);
-      border-radius: 11px; padding: 11px 13px;
-      font-family: 'Cairo', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink);
-      background: var(--pale); outline: none;
-      transition: border-color .2s, background .2s, box-shadow .2s;
-      text-align: right; direction: rtl;
-    }
-    .field-wrap input:focus { border-color: var(--gold); background: var(--white); box-shadow: 0 0 0 3px rgba(196,146,42,.12); }
-    .field-wrap input::placeholder { color: var(--ink-lt); }
+    /* ORDER FORM */
+    .order-form { background: var(--white); border: 2px solid var(--blue); border-radius: 22px; padding: 22px 18px 20px; box-shadow: var(--shadow-md); margin-bottom: 32px; }
+    .form-title { text-align: center; font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 5px; }
+    .form-sub   { text-align: center; font-size: 12px; color: var(--gray-mid); margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px dashed var(--border); }
+    .field-group { display: flex; flex-direction: column; gap: 11px; margin-bottom: 16px; }
+    .field-wrap label { display: block; font-size: 11px; font-weight: 800; color: var(--blue-dk); margin-bottom: 4px; text-align: right; }
+    .field-wrap input { width: 100%; border: 1.5px solid rgba(91,196,229,.3); border-radius: 11px; padding: 11px 13px; font-family: 'Cairo', sans-serif; font-size: 14px; color: var(--ink); background: var(--off); outline: none; transition: border-color .2s, box-shadow .2s; text-align: right; direction: rtl; }
+    .field-wrap input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(91,196,229,.15); background: #fff; }
+    .field-wrap input::placeholder { color: var(--gray-mid); }
     .field-err { color: #dc2626; font-size: 11px; margin-top: 4px; display: block; text-align: right; }
-
-    .order-summary {
-      background: var(--pale); border: 1px dashed var(--border);
-      border-radius: 11px; padding: 11px 13px; margin-bottom: 16px;
-    }
-    .order-summary-title { font-size: 11px; font-weight: 800; color: var(--gold-dk); margin-bottom: 9px; text-align: right; }
-    .summary-line { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-mid); margin-bottom: 4px; flex-direction: row-reverse; }
-    .summary-line.total { font-weight: 800; font-size: 14px; color: var(--ink); border-top: 1px solid var(--border); padding-top: 7px; margin-top: 5px; }
-    .summary-perfs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; justify-content: flex-end; }
-    .summary-perf-tag { font-size: 11px; background: rgba(196,146,42,.12); color: var(--gold-dk); border-radius: 6px; padding: 2px 7px; font-weight: 600; }
-
-    .buy-btn {
-      width: 100%; background: var(--grad); color: var(--white); border: none;
-      border-radius: 14px; padding: 16px 20px;
-      font-family: 'Cairo', sans-serif; font-size: 16px; font-weight: 800;
-      cursor: pointer; position: relative; overflow: hidden;
-      transition: opacity .2s, transform .15s;
-      box-shadow: 0 8px 24px rgba(160,120,24,.3);
-    }
-    .buy-btn:hover { opacity: .9; }
+    .order-summary { background: var(--blue-lt); border: 1px dashed var(--border); border-radius: 12px; padding: 12px 14px; margin-bottom: 16px; }
+    .sum-title { font-size: 11px; font-weight: 800; color: var(--navy); margin-bottom: 9px; text-align: right; }
+    .sum-line  { display: flex; justify-content: space-between; font-size: 12px; color: var(--gray-mid); margin-bottom: 4px; flex-direction: row-reverse; }
+    .sum-line.total { font-weight: 900; font-size: 14px; color: var(--navy); border-top: 1px solid var(--border); padding-top: 8px; margin-top: 6px; }
+    .buy-btn { width: 100%; background: var(--blue); color: #fff; border: none; border-radius: 14px; padding: 17px 20px; font-family: 'Cairo', sans-serif; font-size: 16px; font-weight: 900; cursor: pointer; transition: background .2s, transform .15s; box-shadow: 0 8px 24px rgba(91,196,229,.5); }
+    .buy-btn:hover  { background: var(--blue-dk); }
     .buy-btn:active { transform: scale(.98); }
-    .buy-btn::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,.14) 0%, transparent 55%); pointer-events: none; }
     .buy-btn:disabled { opacity: .7; cursor: wait; }
+    .cod-badge { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; padding: 9px 12px; background: var(--blue-lt); border-radius: 10px; border: 1px dashed var(--border); font-size: 12px; font-weight: 700; color: var(--navy); flex-direction: row-reverse; }
 
-    .cod-badge {
-      display: flex; align-items: center; justify-content: center;
-      gap: 8px; margin-top: 11px; padding: 8px 12px;
-      background: var(--pale); border-radius: 10px;
-      border: 1px dashed var(--border);
-      font-size: 12px; font-weight: 700; color: var(--gold-dk);
-    }
+    /* WHY CIRCLES */
+    .why-section { background: var(--white); padding: 48px 0; overflow: hidden; }
+    .why-scroll-wrap { overflow-x: auto; scrollbar-width: none; padding: 0 16px 12px; }
+    .why-scroll-wrap::-webkit-scrollbar { display: none; }
+    .why-scroll { display: flex; gap: 24px; width: max-content; padding: 8px 0; }
+    .why-item { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100px; text-align: center; flex-shrink: 0; }
+    .why-circle { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(145deg, #A8E3F3 0%, #5BC4E5 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(91,196,229,.35); }
+    .why-label { font-size: 12px; font-weight: 800; color: var(--navy); line-height: 1.3; }
 
-    /* ── FOOTER ── */
-    footer { background: var(--ink); color: rgba(255,255,255,.7); padding: 28px 20px 22px; text-align: center; margin-top: 36px; }
-    footer .brand { font-size: 24px; font-weight: 700; color: var(--gold-lt); margin-bottom: 5px; }
-    footer p { font-size: 12px; margin-bottom: 18px; }
-    .footer-contact { display: flex; flex-direction: column; gap: 9px; max-width: 300px; margin: 0 auto 18px; }
-    .footer-link {
-      display: flex; align-items: center; justify-content: center; gap: 9px;
-      padding: 11px 12px; background: rgba(255,255,255,.07);
-      border-radius: 11px; color: var(--white);
-      text-decoration: none; font-size: 13px; font-weight: 600;
-      transition: background .2s;
-    }
-    .footer-link:hover { background: rgba(255,255,255,.13); }
-    .footer-copy { font-size: 11px; opacity: .5; border-top: 1px solid rgba(255,255,255,.1); padding-top: 18px; margin-top: 8px; }
+    /* FOOTER */
+    footer { background: var(--navy); color: rgba(255,255,255,.75); padding: 32px 20px 24px; text-align: center; margin-top: 20px; }
+    .footer-brand { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 4px; }
+    .footer-sub   { font-size: 11px; letter-spacing: 1px; color: var(--blue-mid); margin-bottom: 18px; }
+    .footer-links { display: flex; flex-direction: column; gap: 9px; max-width: 300px; margin: 0 auto 20px; }
+    .footer-link  { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; background: rgba(255,255,255,.08); border-radius: 12px; color: #fff; text-decoration: none; font-size: 13px; font-weight: 700; transition: background .2s; flex-direction: row-reverse; }
+    .footer-link:hover { background: rgba(255,255,255,.14); }
+    .footer-link.insta-link { background: linear-gradient(135deg, rgba(131,58,180,.3), rgba(253,29,29,.3), rgba(252,176,69,.3)); }
+    .footer-link.insta-link:hover { background: linear-gradient(135deg, rgba(131,58,180,.5), rgba(253,29,29,.5), rgba(252,176,69,.5)); }
+    .footer-copy  { font-size: 11px; opacity: .45; border-top: 1px solid rgba(255,255,255,.1); padding-top: 18px; margin-top: 8px; }
 
-    /* ── MODAL ── */
-    .modal-overlay {
-      position: fixed; inset: 0; z-index: 1000;
-      background: rgba(0,0,0,.55);
-      display: flex; align-items: center; justify-content: center;
-      padding: 20px; opacity: 0; pointer-events: none; transition: opacity .3s;
-    }
+    /* MODAL */
+    .modal-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.45); display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity .3s; }
     .modal-overlay.open { opacity: 1; pointer-events: auto; }
-    .modal-box {
-      background: var(--white); border-radius: 22px;
-      padding: 32px 22px; max-width: 340px; width: 100%;
-      text-align: center; transform: translateY(20px);
-      transition: transform .4s cubic-bezier(.25,1,.5,1);
-    }
+    .modal-box { background: var(--white); border-radius: 22px; padding: 32px 22px; max-width: 340px; width: 100%; text-align: center; transform: translateY(20px); transition: transform .4s cubic-bezier(.25,1,.5,1); }
     .modal-overlay.open .modal-box { transform: translateY(0); }
-    .modal-icon { width: 60px; height: 60px; border-radius: 50%; background: var(--tint); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
-    .modal-title { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
-    .modal-text { font-size: 13px; color: var(--ink-mid); line-height: 1.8; margin-bottom: 22px; }
-    .modal-close { width: 100%; background: var(--grad); color: var(--white); border: none; padding: 13px; border-radius: 11px; font-size: 15px; font-weight: 800; cursor: pointer; font-family: 'Cairo', sans-serif; }
+    .modal-icon  { width: 62px; height: 62px; border-radius: 50%; background: var(--blue-lt); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; }
+    .modal-title { font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 8px; }
+    .modal-text  { font-size: 13px; color: var(--gray-mid); line-height: 1.8; margin-bottom: 22px; }
+    .modal-close { width: 100%; background: var(--blue); color: #fff; border: none; padding: 13px; border-radius: 11px; font-family: 'Cairo', sans-serif; font-size: 15px; font-weight: 900; cursor: pointer; }
 
-    /* ── TOAST ── */
-    .toast {
-      position: fixed; bottom: 24px; left: 50%;
-      transform: translateX(-50%) translateY(80px);
-      background: var(--ink); color: var(--white);
-      padding: 11px 22px; border-radius: 11px;
-      font-size: 12px; font-weight: 600; z-index: 9999;
-      transition: transform .35s cubic-bezier(.25,1,.5,1);
-      white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,.25);
-    }
+    /* TOAST */
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--navy); color: #fff; padding: 11px 22px; border-radius: 11px; font-size: 12px; font-weight: 700; z-index: 9999; transition: transform .35s cubic-bezier(.25,1,.5,1); white-space: nowrap; box-shadow: var(--shadow-md); }
     .toast.show { transform: translateX(-50%) translateY(0); }
+
+    @media (max-width: 380px) {
+      .benefits-grid, .feat-grid, .ingr-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .hero-slider, .slide { min-height: 380px; }
+      .compare-container { aspect-ratio: 1/1.1; border-radius: 16px; }
+    }
   </style>
-<base target="_blank">
 </head>
 <body>
 
-<header>
-  <p>
-    توصيل مجاني في جميع أنحاء المغرب
-    <span>•</span>
-    الدفع عند الاستلام
-    <span>•</span>
-    من 2 إلى 3 أيام عمل
-  </p>
-</header>
-
-<div class="hero-wrapper">
-  <div class="hero-main">
-    <img id="hero-main-img" src="images/slides/1.jpeg" alt="عطر" onerror="this.style.background='#2a1f0e';this.removeAttribute('src')"/>
-  </div>
-  <div class="hero-thumbs" id="hero-thumbs"></div>
+<!-- ANNOUNCE -->
+<div class="announce-bar">
+  <p>توصيل مجاني في جميع أنحاء المغرب <span>•</span> الدفع عند الاستلام <span>•</span> 2 إلى 3 أيام عمل</p>
 </div>
 
+<!-- NAV -->
+<!-- <nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark">B</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Biopalis</span>
+      <span class="nav-logo-sub">طبيعة وعلم</span>
+    </div>
+  </div>
+  <a class="nav-cta" href="#commande">اطلب الآن ←</a>
+</nav> -->
+
+<!-- ══ HERO SLIDER ══ -->
+<section class="hero-slider" id="hero-slider">
+  <div class="slides-track" id="slides-track">
+    <div class="slide">
+      <img class="slide-bg" src="sliders/1.png" alt="" onerror="this.style.display='none'"/>
+      <div class="slide-overlay"></div>
+    </div>
+    <div class="slide">
+      <img class="slide-bg" src="sliders/2.png" alt="" onerror="this.style.display='none'"/>
+      <div class="slide-overlay"></div>
+    </div>
+    <div class="slide">
+      <img class="slide-bg" src="sliders/3.png" alt="" onerror="this.style.display='none'"/>
+      <div class="slide-overlay"></div>
+    </div>
+  </div>
+
+  <div class="slider-nav">
+    <button class="s-btn" id="slide-prev" aria-label="السابق">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="s-btn" id="slide-next" aria-label="التالي">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+  <div class="slider-dots" id="slider-dots"></div>
+</section>
+
+<!-- SP BAR -->
+<div class="sp-bar">
+  <div class="sp-item">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="#F5A623"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <span>4.8/5 — أكثر من 1200 تقييم</span>
+  </div>
+  <div class="sp-sep"></div>
+  <div class="sp-item">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+    <span>+4800 عميلة راضية</span>
+  </div>
+  <div class="sp-sep"></div>
+</div>
+
+<!-- ══ PROBLEM SECTION — light, pro ══ -->
+<section class="problem-section">
+  <div class="wrap">
+    <p class="section-label">هل هذا يشبه تجربتك؟</p>
+    <h2 class="section-title">كم مرة منعك البهاق<br/>من الشعور بالثقة؟</h2>
+    <p class="section-sub">البهاق لا يؤثر على البشرة فقط... بل يؤثر على ثقتك بنفسك يومياً.</p>
+    <div class="problem-list">
+
+      <div class="problem-item">
+        <div class="problem-icon">
+          <!-- clothes / hanger icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/>
+          </svg>
+        </div>
+        <div class="problem-item-text">اختيار ملابس تخفي البقع بدل ما تحبينه</div>
+      </div>
+
+      <div class="problem-item">
+        <div class="problem-icon">
+          <!-- camera icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+            <circle cx="12" cy="13" r="4"/>
+          </svg>
+        </div>
+        <div class="problem-item-text">عدم الراحة عند التقاط الصور في المناسبات</div>
+      </div>
+
+      <!-- <div class="problem-item">
+        <div class="problem-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <div class="problem-item-text">الشعور بنظرات الآخرين وتعليقاتهم</div>
+      </div> -->
+
+      <div class="problem-item">
+        <div class="problem-icon">
+          <!-- briefcase icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+        </div>
+        <div class="problem-item-text">فقدان جزء من ثقتك في العمل والحياة اليومية</div>
+      </div>
+
+    </div>
+    <a class="problem-cta" href="#commande">
+      اكتشفي الحل مع DERMALYS
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba-section">
+  <div class="wrap" style="padding-bottom:0">
+    <p class="section-label">نتائج حقيقية</p>
+    <h2 class="section-title">قبل وبعد</h2>
+    <p class="section-sub">حرّكي المؤشر لترى التحوّل بعد 4 أسابيع من الاستخدام اليومي.</p>
+  </div>
+  <div class="compare-container" id="compare-box">
+    <!-- Base image (AFTER) fills everything -->
+    <img class="ba-img-base" src="images/after.png" alt="بعد" onerror="this.style.background='#E8F8FD'"/>
+    <!-- Clip shows BEFORE on left side -->
+    <div class="ba-clip" id="ba-clip">
+      <img src="images/before.png" alt="قبل" onerror="this.style.background='#C5EEF8'"/>
+    </div>
+    <!-- Divider line + handle -->
+    <div class="ba-divider" id="ba-divider">
+      <div class="ba-handle">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 3 12 9 6"/><polyline points="15 6 21 12 15 18"/>
+        </svg>
+      </div>
+    </div>
+    <div class="ba-label lbl-before">قبل</div>
+    <div class="ba-label lbl-after">بعد</div>
+  </div>
+</section>
+
 <div class="wrap">
-
-  <section class="product-info">
-    <p class="eyebrow">إصدار حصري</p>
-    <h1 class="display product-title">طقم عطور<br/>على مقاسك</h1>
-    <div class="trust-pills">
-      <span class="trust-pill">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        توصيل مجاني
-      </span>
-      <span class="trust-pill">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-        دفع عند الاستلام
-      </span>
-    </div>
-    <div class="social-proof">
-      <div class="avatar-stack">
-        <div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt=""/></div>
-        <div class="avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt=""/></div>
-        <div class="avatar"><img src="https://randomuser.me/api/portraits/women/90.jpg" alt=""/></div>
-        <div class="avatar"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt=""/></div>
-      </div>
-      <div>
-        <div class="sp-text">+3200 طقم تم إنشاؤه هذا الشهر</div>
-      </div>
-    </div>
-    <div class="divider"></div>
-  </section>
-
-  <!-- STEP 1 -->
-  <section id="step-pack">
-    <p class="section-title">الخطوة 1 — اختر طقمك</p>
-    <div class="pack-grid">
-
-      <!-- PACK A -->
-      <div class="pack-card selected" data-pack="A" onclick="selectPack('A')">
-        <div class="pack-badge">الأكثر مبيعاً 🔥</div>
-        <div class="pack-radio"></div>
-        <div class="pack-inner">
-          <div class="pack-img-col">
-            <!-- صورة الطقم A — الملف: assets/pack-a.jpg -->
-            <img src="images/slides/1.jpeg" alt="طقم الاكتشاف"
-                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-            <div class="pack-img-placeholder" style="display:none">🧴</div>
-          </div>
-          <div class="pack-text-col">
-            <div class="pack-type-pill">3 × 55مل</div>
-            <div class="pack-name">طقم الاكتشاف</div>
-            <div class="pack-sub">3 عطور باختيارك · زجاجات 55مل</div>
-            <div class="pack-price-row">
-              <span class="pack-price-now">200 درهم</span>
-              <span class="pack-price-old">350 د</span>
-              <span class="pack-price-save">43%−</span>
-            </div>
-          </div>
+  <!-- BENEFITS -->
+  <div class="section-wrap">
+    <p class="section-label">لماذا DERMALYS؟</p>
+    <h2 class="section-title">6 فوائد مستهدفة</h2>
+    <p class="section-sub">مناسبة للعناية اليومية بالبشرة المتأثرة بالبهاق.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>
         </div>
-        <div class="pack-dots-row">
-          <span class="pack-dots-label">فتحات متاحة:</span>
-          <div id="pack-dots-A"></div>
-        </div>
+        <div class="benefit-title">ترطيب عميق</div>
+        <div class="benefit-sub">ترطيب مستمر يمنح البشرة نعومة ملحوظة</div>
       </div>
-
-      <!-- PACK B -->
-      <div class="pack-card" data-pack="B" onclick="selectPack('B')">
-        <div class="pack-badge">أفضل قيمة 💫</div>
-        <div class="pack-radio"></div>
-        <div class="pack-inner">
-          <div class="pack-img-col">
-            <!-- صورة الطقم B — الملف: assets/pack-b.jpg -->
-            <img src="images/slides/5.jpeg" alt="الطقم الأساسي"
-                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-            <div class="pack-img-placeholder" style="display:none">🧴</div>
-          </div>
-          <div class="pack-text-col">
-            <div class="pack-type-pill">5 × 30مل</div>
-            <div class="pack-name">الطقم الأساسي</div>
-            <div class="pack-sub">5 عطور باختيارك · زجاجات 30مل</div>
-            <div class="pack-price-row">
-              <span class="pack-price-now">180 درهم</span>
-              <span class="pack-price-old">320 د</span>
-              <span class="pack-price-save">44%−</span>
-            </div>
-          </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
         </div>
-        <div class="pack-dots-row">
-          <span class="pack-dots-label">فتحات متاحة:</span>
-          <div id="pack-dots-B"></div>
-        </div>
+        <div class="benefit-title">مظهر متوازن</div>
+        <div class="benefit-sub">يدعم مظهر البشرة المتجانس مع الاستخدام المنتظم</div>
       </div>
-
-      <!-- PACK C -->
-      <div class="pack-card" data-pack="C" onclick="selectPack('C')">
-        <div class="pack-radio"></div>
-        <div class="pack-inner">
-          <div class="pack-img-col">
-            <!-- صورة الطقم C — الملف: assets/pack-c.jpg -->
-            <img src="images/slides/4.jpeg" alt="طقم البريستيج"
-                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-            <div class="pack-img-placeholder" style="display:none">🧴</div>
-          </div>
-          <div class="pack-text-col">
-            <div class="pack-type-pill">4 × 30مل</div>
-            <div class="pack-name">طقم البريستيج</div>
-            <div class="pack-sub">4 عطور باختيارك · زجاجات 30مل</div>
-            <div class="pack-price-row">
-              <span class="pack-price-now">200 درهم</span>
-              <span class="pack-price-old">360 د</span>
-              <span class="pack-price-save">44%−</span>
-            </div>
-          </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </div>
-        <div class="pack-dots-row">
-          <span class="pack-dots-label">فتحات متاحة:</span>
-          <div id="pack-dots-C"></div>
+        <div class="benefit-title">فيتامين D مُثبَّت</div>
+        <div class="benefit-sub">يدعم صحة البشرة ووظائفها الطبيعية</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
+        <div class="benefit-title">مستخلصات نباتية</div>
+        <div class="benefit-sub">طبيعية 100%، تهدئ البشرة وتغذيها</div>
       </div>
-
-    </div>
-  </section>
-
-  <!-- STEP 2 -->
-  <section id="step-picker" class="picker-section">
-    <p class="section-title">الخطوة 2 — كوّن طقمك</p>
-    <div class="selection-progress">
-      <span id="prog-label">0 عطر مختار</span>
-      <div class="progress-bar-wrap">
-        <div class="progress-bar-fill" id="prog-bar" style="width:0%"></div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="benefit-title">راحة يومية</div>
+        <div class="benefit-sub">إحساس بالانتعاش والراحة من أول استخدام</div>
       </div>
-      <span id="prog-total">/ 3</span>
-    </div>
-    <div class="picker-slots" id="picker-slots"></div>
-  </section>
-
-  <div class="stock-bar">
-    <div class="ping-wrap"><span class="ping-ring"></span><span class="ping-dot"></span></div>
-    <span class="stock-text">⚠️ المخزون محدود — 11 طقم فقط متبقية</span>
-    <div class="stock-track"><div class="stock-fill"></div></div>
-  </div>
-
-  <div class="countdown-bar">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-    <span>اطلب خلال <strong id="countdown">08:00:00</strong> للتوصيل ذو أولوية</span>
-  </div>
-
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dk)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      <div><div class="feature-title">توصيل مجاني</div><div class="feature-sub">في جميع أنحاء المغرب</div></div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dk)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <div><div class="feature-title">الدفع عند الاستلام</div><div class="feature-sub">بدون بطاقة بنكية</div></div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dk)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
-      <div><div class="feature-title">100% أصلي</div><div class="feature-sub">مضمون ومعتمد</div></div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dk)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.37a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16a2 2 0 0 1 .42.92z"/></svg></div>
-      <div><div class="feature-title">دعم 24/7</div><div class="feature-sub">عبر واتساب</div></div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
+        <div class="benefit-title">يمتص بسرعة</div>
+        <div class="benefit-sub">تركيبة خفيفة لا تترك ملمساً دهنياً</div>
+      </div>
     </div>
   </div>
 
+  <!-- INGREDIENTS -->
+  <div class="section-wrap">
+    <p class="section-label">المكونات الأساسية</p>
+    <h2 class="section-title">علم وطبيعة</h2>
+    <p class="section-sub">كل مكوّن مختار بعناية لتآزره الفريد مع بشرة البهاق.</p>
+    <div class="ingr-grid">
+      <div class="ingr-card">
+        <div class="ingr-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div><div class="ingr-title">صبار الألوفيرا</div><div class="ingr-sub">يهدئ ويرطّب البشرة الحساسة</div></div>
+      </div>
+      <div class="ingr-card">
+        <div class="ingr-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        </div>
+        <div><div class="ingr-title">فيتامين D3</div><div class="ingr-sub">يعزز الحاجز الجلدي وصحة البشرة</div></div>
+      </div>
+      <div class="ingr-card">
+        <div class="ingr-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/></svg>
+        </div>
+        <div><div class="ingr-title">نياسيناميد</div><div class="ingr-sub">يدعم توازن البشرة ويضيّق المسام</div></div>
+      </div>
+      <div class="ingr-card">
+        <div class="ingr-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/></svg>
+        </div>
+        <div><div class="ingr-title">حمض الهيالورونيك</div><div class="ingr-sub">يملأ ويحسّن نسيج البشرة في العمق</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ AVIS — images only, auto-scroll infinite ══ -->
+<section class="avis-section">
+  <div class="wrap" style="margin-bottom:24px">
+    <p class="section-label">آراء العملاء</p>
+    <h2 class="section-title">ماذا يقول عملاؤنا بعد تجربة المنتج</h2>
+    <p class="section-sub">رسائل واتساب حقيقية وصلتنا بعد استلام المنتج وتجربته</p>
+  </div>
+  <div class="avis-outer">
+    <div class="avis-track" id="avis-track">
+      <!-- JS fills this -->
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
   <div class="divider"></div>
 
-  <section id="checkout-section">
+  <!-- PACK SELECTION -->
+  <section id="commande" class="packs-wrap">
+    <p class="section-label">عروض لفترة محدودة</p>
+    <h2 class="section-title">اختاري باقتك</h2>
+    <p class="section-sub">مخزون محدود — استفيدي من الأسعار الحالية قبل النفاد.</p>
+
+    <div class="pack-grid">
+      <div class="pack-card chosen" id="pack-duo" onclick="selectPack('duo')">
+        <div class="pack-badge">⭐ أفضل قيمة مقابل المال</div>
+        <div class="pack-radio"></div>
+        <div class="pack-inner">
+          <div class="pack-img-col">
+            <img src="pack/2.png" alt="باقة الثنائي" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pack-img-ph" style="display:none">🧴</div>
+          </div>
+          <div class="pack-text-col">
+            <div class="pack-name">باقة الثنائي</div>
+            <div class="pack-desc">أنبوبتان ديرماليس × 100مل</div>
+            <div class="pack-price-row">
+              <span class="pack-price">200 درهم</span>
+              <span class="pack-old">340 درهم</span>
+              <span class="pack-save">41%−</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pack-card" id="pack-solo" onclick="selectPack('solo')">
+        <div class="pack-radio"></div>
+        <div class="pack-inner">
+          <div class="pack-img-col">
+            <img src="pack/1.png" alt="باقة المنفردة" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pack-img-ph" style="display:none">🧴</div>
+          </div>
+          <div class="pack-text-col">
+            <div class="pack-name">باقة المنفردة</div>
+            <div class="pack-desc">أنبوبة ديرماليس × 100مل</div>
+            <div class="pack-price-row">
+              <span class="pack-price">100 درهم</span>
+              <span class="pack-old">180 درهم</span>
+              <span class="pack-save">44%−</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stock-bar">
+      <div class="ping-wrap"><span class="ping-ring"></span><span class="ping-dot"></span></div>
+      <span class="stock-text">⚠️ مخزون محدود — 14 وحدة فقط متبقية</span>
+    </div>
+    <div class="countdown-bar">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span>اطلبي خلال <strong id="countdown">08:00:00</strong> للتوصيل ذو الأولوية</span>
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h5l2 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div><div class="feat-title">توصيل مجاني</div><div class="feat-sub">جميع أنحاء المغرب، 2-3 أيام</div></div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <div><div class="feat-title">الدفع عند الاستلام</div><div class="feat-sub">دون الحاجة لبطاقة بنكية</div></div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <div><div class="feat-title">100% أصلي</div><div class="feat-sub">بفحص douaa.ma</div></div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.37a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17z"/></svg>
+        </div>
+        <div><div class="feat-title">دعم واتساب</div><div class="feat-sub">متاح 7 أيام في الأسبوع</div></div>
+      </div>
+    </div>
+
     <div class="order-form">
       <div class="form-title">🛍️ أتمم طلبك الآن</div>
       <div class="form-sub">توصيل مجاني · الدفع عند الاستلام</div>
       <div class="field-group">
-        <div class="field-wrap">
-          <label>الاسم الكامل</label>
-          <input id="f-name" type="text" placeholder="مثال: سارة العلمي"/>
-        </div>
-        <div class="field-wrap">
-          <label>العنوان</label>
-          <input id="f-address" type="text" placeholder="الحي، الشارع، الرقم..."/>
-        </div>
-        <div class="field-wrap">
-          <label>المدينة</label>
-          <input id="f-city" type="text" placeholder="مثال: الدار البيضاء"/>
-        </div>
-        <div class="field-wrap">
-          <label>رقم الهاتف</label>
-          <input id="f-phone" type="tel" placeholder="06XXXXXXXX" dir="ltr" style="text-align:left"/>
-        </div>
+        <div class="field-wrap"><label>الاسم الكامل</label><input id="f-name" type="text" placeholder="مثال: نادية بنعلي"/></div>
+        <div class="field-wrap"><label>العنوان</label><input id="f-address" type="text" placeholder="الحي، الشارع، الرقم..."/></div>
+        <div class="field-wrap"><label>المدينة</label><input id="f-city" type="text" placeholder="مثال: أكادير"/></div>
+        <div class="field-wrap"><label>رقم الهاتف</label><input id="f-phone" type="tel" placeholder="06XXXXXXXX" dir="ltr" style="text-align:left"/></div>
       </div>
       <div class="order-summary">
-        <div class="order-summary-title">ملخص طلبك</div>
-        <div class="summary-line"><span id="sum-pack">–</span><span id="sum-price">–</span></div>
-        <div class="summary-line"><span>التوصيل</span><span style="color:var(--gold-dk);font-weight:800;">مجاني</span></div>
-        <div class="summary-line total"><span>المجموع</span><span id="sum-total">–</span></div>
-        <div class="summary-perfs" id="summary-perfs"></div>
+        <div class="sum-title">ملخص طلبك</div>
+        <div class="sum-line"><span id="sum-price">200 درهم</span><span id="sum-pack">باقة الثنائي — أنبوبتان × 100مل</span></div>
+        <div class="sum-line"><span style="color:var(--green);font-weight:800">مجاني</span><span>التوصيل</span></div>
+        <div class="sum-line total"><span id="sum-total">200 درهم</span><span>المجموع</span></div>
       </div>
-      <button class="buy-btn" id="buy-btn">✨ اطلب الآن — الدفع عند الاستلام</button>
+      <button class="buy-btn" id="buy-btn">اطلب الآن — الدفع عند الاستلام ✨</button>
       <div class="cod-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        لا حاجة لبطاقة بنكية — ادفع عند استلام طلبك
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        لا تحتاجين لبطاقة بنكية — ادفعي عند استلام طلبك
       </div>
     </div>
   </section>
-
 </div>
 
+<!-- WHY US -->
+<section class="why-section">
+  <div class="wrap" style="padding-bottom:0">
+    <p class="section-label">ثقتنا في منتجاتنا</p>
+    <h2 class="section-title">لماذا تختارين DERMALYS؟</h2>
+    <p class="section-sub">مكونات مدروسة، نتائج مُثبتة لبشرة البهاق.</p>
+  </div>
+  <div class="why-scroll-wrap">
+    <div class="why-scroll">
+      <div class="why-item">
+        <div class="why-circle">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <div class="why-label">منتجات مُعتمدة</div>
+      </div>
+      <div class="why-item">
+        <div class="why-circle">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div class="why-label">مكونات آمنة</div>
+      </div>
+      <div class="why-item">
+        <div class="why-circle">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M12 2a9 9 0 0 0-9 9c0 2.4.9 4.6 2.4 6.3L12 22l6.6-4.7C20.1 15.6 21 13.4 21 11a9 9 0 0 0-9-9z"/></svg>
+        </div>
+        <div class="why-label">تركيبات نظيفة</div>
+      </div>
+      <div class="why-item">
+        <div class="why-circle">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+        </div>
+        <div class="why-label">روتين بسيط</div>
+      </div>
+      <div class="why-item">
+        <div class="why-circle">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div class="why-label">فعالية مُثبتة</div>
+      </div>
+      <div class="why-item">
+        <div class="why-circle">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        </div>
+        <div class="why-label">فيتامين D</div>
+      </div>
+      <div class="why-item">
+        <div class="why-circle">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M2 12h20"/></svg>
+        </div>
+        <div class="why-label">ترطيب عميق</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div class="brand">YSF_PARFUMS®</div>
-  <p>عطور أصيلة لكل لحظة مميزة</p>
-  <div class="footer-contact">
+  <div class="footer-brand">Biopalis®</div>
+  <div class="footer-sub">عناية متخصصة للبشرة المتأثرة بالبهاق</div>
+  <div class="footer-links">
     <a class="footer-link" href="https://wa.me/212606076419" target="_blank" rel="noopener">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      تواصل معنا عبر واتساب
+      تواصلي معنا عبر واتساب
     </a>
-    <a class="footer-link" href="https://www.instagram.com/youssef_parfumerie?igsh=MXh5bnl3M3RpZXlwcQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="white"/></svg>
-      تابعنا على إنستغرام
+    <a class="footer-link insta-link" href="https://instagram.com/biopalis" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+      تابعينا على إنستغرام
     </a>
   </div>
-  <div class="footer-copy">© 2026 YSF_PARFUMS® — جميع الحقوق محفوظة</div>
+  <div class="footer-copy">© 2026 Biopalis® — جميع الحقوق محفوظة</div>
 </footer>
 
+<!-- MODAL -->
 <div class="modal-overlay" id="success-modal">
   <div class="modal-box">
     <div class="modal-icon">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
     <div class="modal-title">تم استلام طلبك! 🎉</div>
-    <div class="modal-text" id="modal-text">شكراً لك! تم تسجيل طقمك. سيتواصل معك فريقنا قريباً لتأكيد التوصيل.</div>
+    <div class="modal-text" id="modal-text">شكراً لك! تم تسجيل طلبك بنجاح. سيتواصل معك فريقنا قريباً لتأكيد التوصيل.</div>
     <button class="modal-close" onclick="closeModal()">رائع، شكراً!</button>
   </div>
 </div>
-
 <div class="toast" id="toast"></div>
 
 <script>
-(function () {
-  'use strict';
+(function(){
+'use strict';
+var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9YrkIuJMq58uYZsVhsJ11zVzLs-nyRyI1zCMpZVaJMS69LG868hQqcGdkdfYxF4DcIQ/exec';
+var PACKS = {
+  duo:  { label: 'باقة الثنائي — أنبوبتان × 100مل', price: '200 درهم' },
+  solo: { label: 'باقة المنفردة — أنبوبة × 100مل',  price: '100 درهم' }
+};
+var currentPack = 'duo';
 
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9YrkIuJMq58uYZsVhsJ11zVzLs-nyRyI1zCMpZVaJMS69LG868hQqcGdkdfYxF4DcIQ/exec';
+/* ── HERO SLIDER ── */
+(function(){
+  var track = document.getElementById('slides-track');
+  var dotsWrap = document.getElementById('slider-dots');
+  if (!track) return;
+  var slides = track.querySelectorAll('.slide');
+  var total = slides.length;
+  if (!total) return;
+  var current = 0, timer, startX;
 
-  const SLIDES = [
-    { src: 'images/slides/1.jpeg', alt: 'صورة 1' },
-    { src: 'images/slides/2.jpeg', alt: 'صورة 2' },
-    { src: 'images/slides/3.jpeg', alt: 'صورة 3' },
-    { src: 'images/slides/4.jpeg', alt: 'صورة 4' },
-    { src: 'images/slides/5.jpeg', alt: 'صورة 5' },
-  ];
-
-  const PERFUMES = [
-    { id: 'p1',  name: 'STRONGER WITH YOU',  img: 'images/1.jpeg'  },
-    { id: 'p2',  name: 'HUGO BOSS',           img: 'images/3.jpeg'  },
-    { id: 'p3',  name: 'CREED Aventus',       img: 'images/4.jpeg'  },
-    { id: 'p4',  name: 'SAUVAGE',             img: 'images/5.jpeg'  },
-    { id: 'p5',  name: 'Ultra Male',          img: 'images/6.jpeg'  },
-    { id: 'p6',  name: 'Paradise Garden',     img: 'images/7.jpeg'  },
-    { id: 'p7',  name: 'IMPÉRATRICE',         img: 'images/8.jpeg'  },
-    { id: 'p8',  name: 'Azzaro Wanted',       img: 'images/9.jpeg'  },
-    { id: 'p9',  name: 'GIORGIO ARMANI',      img: 'images/10.jpeg' },
-    { id: 'p10', name: 'Good Girl',           img: 'images/11.jpeg' },
-    { id: 'p11', name: 'ESCADA SORBETTO',     img: 'images/12.jpeg' },
-    { id: 'p12', name: 'Gaultier Divine',     img: 'images/13.jpeg' },
-    { id: 'p13', name: 'POISON GIRL',         img: 'images/14.jpeg' },
-    { id: 'p14', name: 'KAY ALI',             img: 'images/15.jpeg' },
-    { id: 'p15', name: 'Libre YSL',           img: 'images/16.jpeg' },
-  ];
-
-  const PACKS = {
-    A: { name: 'طقم الاكتشاف — 3 × 55مل',  count: 3, priceLabel: '200 درهم', vol: '55مل', priceRaw: 200 },
-    B: { name: 'الطقم الأساسي — 5 × 30مل', count: 5, priceLabel: '180 درهم', vol: '30مل', priceRaw: 180 },
-    C: { name: 'طقم البريستيج — 4 × 30مل', count: 4, priceLabel: '200 درهم', vol: '30مل', priceRaw: 200 },
-  };
-
-  let currentPack = 'A';
-  let selections  = [];
-  let openSlotIdx = -1;
-
-  /* ══ HERO SLIDER ══ */
-  (function initSlider() {
-    var mainImg    = document.getElementById('hero-main-img');
-    var thumbsWrap = document.getElementById('hero-thumbs');
-    mainImg.style.transition = 'opacity .18s ease';
-
-    SLIDES.forEach(function(slide, index) {
-      var btn = document.createElement('button');
-      btn.className = 'hero-thumb' + (index === 0 ? ' active' : '');
-      btn.setAttribute('aria-label', slide.alt);
-      var img = document.createElement('img');
-      img.src = slide.src; img.alt = slide.alt;
-      img.onerror = function() { this.style.background = '#2a1f0e'; this.src = ''; };
-      btn.appendChild(img);
-      btn.addEventListener('click', function() {
-        mainImg.style.opacity = '0';
-        setTimeout(function() {
-          mainImg.src = slide.src; mainImg.alt = slide.alt;
-          mainImg.onerror = function() { this.style.background = '#2a1f0e'; this.src = ''; };
-          mainImg.style.opacity = '1';
-        }, 180);
-        thumbsWrap.querySelectorAll('.hero-thumb').forEach(function(t) { t.classList.remove('active'); });
-        btn.classList.add('active');
-        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-      });
-      thumbsWrap.appendChild(btn);
-    });
-  })();
-
-  /* ══ PACK DOTS ══ */
-  function buildPackDots() {
-    Object.keys(PACKS).forEach(function(key) {
-      var el = document.getElementById('pack-dots-' + key);
-      if (!el) return;
-      el.innerHTML = '';
-      el.style.cssText = 'display:flex;gap:4px;flex-wrap:wrap;';
-      for (var i = 0; i < PACKS[key].count; i++) {
-        var dot = document.createElement('div');
-        dot.className = 'pack-dot';
-        dot.innerHTML = '<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dk)" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>';
-        el.appendChild(dot);
-      }
-    });
+  for (var i = 0; i < total; i++) {
+    (function(idx) {
+      var d = document.createElement('button');
+      d.className = 's-dot' + (idx === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'شريحة ' + (idx + 1));
+      d.onclick = function() { goTo(idx); };
+      dotsWrap.appendChild(d);
+    })(i);
   }
 
-  /* ══ SELECT PACK ══ */
-  window.selectPack = function(key) {
-    currentPack = key;
-    selections  = [];
-    openSlotIdx = -1;
-    document.querySelectorAll('.pack-card').forEach(function(c) {
-      c.classList.toggle('selected', c.dataset.pack === key);
-    });
-    buildPickerSlots();
-    updateProgress();
-    updateSummary();
-    setTimeout(function() {
-      document.getElementById('step-picker').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 120);
-  };
-
-  /* ══ BUILD PICKER SLOTS ══ */
-  function buildPickerSlots() {
-    var pack      = PACKS[currentPack];
-    var container = document.getElementById('picker-slots');
-    container.innerHTML = '';
-    selections = new Array(pack.count).fill(null);
-
-    for (var i = 0; i < pack.count; i++) {
-      (function(idx) {
-        var isLast = (idx === pack.count - 1);
-        var slot = document.createElement('div');
-        slot.className = 'picker-slot';
-        slot.id = 'slot-' + idx;
-
-        var header = document.createElement('div');
-        header.className = 'slot-header';
-        header.innerHTML =
-          '<div class="slot-num" id="slot-num-' + idx + '">' + (idx + 1) + '</div>' +
-          '<div class="slot-plus-btn" id="slot-icon-' + idx + '">' +
-            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dk)" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>' +
-          '</div>' +
-          '<div class="slot-info">' +
-            '<div class="slot-name" id="slot-name-' + idx + '">انقر لاختيار العطر</div>' +
-            '<div class="slot-sub">' + pack.vol + ' · الفتحة ' + (idx + 1) + '</div>' +
-          '</div>' +
-          '<span class="slot-badge" id="slot-badge-' + idx + '">اختر</span>' +
-          '<svg class="slot-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>';
-
-        header.addEventListener('click', function() {
-          if (openSlotIdx === idx) { closeAllSlots(); } else { openSlot(idx); }
-        });
-
-        var panel = document.createElement('div');
-        panel.className = 'slot-panel';
-        var inner = document.createElement('div');
-        inner.className = 'slot-panel-inner';
-
-        var grid = document.createElement('div');
-        grid.className = 'perfume-grid';
-        grid.id = 'grid-' + idx;
-
-        PERFUMES.forEach(function(p) {
-          var card = document.createElement('div');
-          card.className = 'perfume-card';
-          card.dataset.pid = p.id;
-          card.innerHTML =
-            '<img src="' + p.img + '" alt="' + p.name + '" onerror="this.style.background=\'var(--tint)\';this.src=\'\'"/>' +
-            '<div class="perfume-card-name">' + p.name + '</div>' +
-            '<div class="perfume-card-vol">' + pack.vol + '</div>' +
-            '<div class="perfume-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>';
-
-          card.addEventListener('click', function() {
-            var ci = document.getElementById('custom-input-' + idx);
-            var cw = document.getElementById('custom-wrap-' + idx);
-            var cb = document.getElementById('custom-btn-' + idx);
-            if (ci) ci.value = '';
-            if (cw) cw.classList.remove('confirmed');
-            if (cb) { cb.textContent = 'تأكيد'; cb.classList.remove('confirmed-btn'); }
-
-            grid.querySelectorAll('.perfume-card').forEach(function(c) {
-              c.classList.toggle('selected', c.dataset.pid === p.id);
-            });
-
-            var sel = { id: p.id, name: p.name, img: p.img, custom: false };
-            selections[idx] = sel;
-            markSlotDone(idx, sel);
-            updateNextBtn(idx);
-            updateProgress();
-            updateSummary();
-          });
-          grid.appendChild(card);
-        });
-
-        inner.appendChild(grid);
-
-        var customWrap = document.createElement('div');
-        customWrap.className = 'custom-perfume-wrap';
-        customWrap.id = 'custom-wrap-' + idx;
-        customWrap.innerHTML =
-          '<label class="custom-perfume-label">🔍 عطرك غير موجود؟ اكتب اسمه هنا:</label>' +
-          '<div class="custom-perfume-row">' +
-            '<input class="custom-perfume-input" id="custom-input-' + idx + '" type="text" placeholder="مثال: Bleu de Chanel ..." />' +
-            '<button class="custom-perfume-btn" id="custom-btn-' + idx + '">تأكيد</button>' +
-          '</div>';
-        inner.appendChild(customWrap);
-
-        customWrap.querySelector('#custom-btn-' + idx).addEventListener('click', function() {
-          var inputEl = document.getElementById('custom-input-' + idx);
-          var val = inputEl.value.trim();
-          if (!val) { showToast('يرجى كتابة اسم العطر أولاً', '#a07818'); return; }
-          var g = document.getElementById('grid-' + idx);
-          g.querySelectorAll('.perfume-card').forEach(function(c) { c.classList.remove('selected'); });
-          var cw = document.getElementById('custom-wrap-' + idx);
-          var cb = document.getElementById('custom-btn-' + idx);
-          cw.classList.add('confirmed');
-          cb.textContent = '✓ تم'; cb.classList.add('confirmed-btn');
-          var sel = { id: 'custom_' + idx, name: val, img: null, custom: true };
-          selections[idx] = sel;
-          markSlotDone(idx, sel);
-          updateNextBtn(idx);
-          updateProgress();
-          updateSummary();
-        });
-
-        customWrap.querySelector('#custom-input-' + idx).addEventListener('input', function() {
-          if (this.value.trim()) {
-            var g = document.getElementById('grid-' + idx);
-            g.querySelectorAll('.perfume-card').forEach(function(c) { c.classList.remove('selected'); });
-            if (selections[idx] && !selections[idx].custom) {
-              selections[idx] = null;
-              resetSlotAppearance(idx);
-              updateNextBtn(idx);
-              updateProgress();
-              updateSummary();
-            }
-          }
-        });
-
-        var nextWrap = document.createElement('div');
-        nextWrap.className = 'slot-next-wrap';
-        var nextBtn = document.createElement('button');
-        nextBtn.className = 'slot-next-btn';
-        nextBtn.id = 'slot-next-' + idx;
-        nextBtn.disabled = true;
-        nextBtn.innerHTML = isLast
-          ? 'إتمام الاختيار ✓'
-          : 'التالي — العطر ' + (idx + 2) + ' <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
-
-        nextBtn.addEventListener('click', function() {
-          if (isLast) {
-            closeAllSlots();
-            setTimeout(function() {
-              document.getElementById('checkout-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 200);
-          } else {
-            openSlot(idx + 1);
-          }
-        });
-
-        nextWrap.appendChild(nextBtn);
-        inner.appendChild(nextWrap);
-        panel.appendChild(inner);
-        slot.appendChild(header);
-        slot.appendChild(panel);
-        container.appendChild(slot);
-      })(i);
-    }
+  function goTo(idx) {
+    current = (idx + total) % total;
+    track.style.transform = 'translateX(' + (current * 100) + '%)';
+    var dots = dotsWrap.querySelectorAll('.s-dot');
+    for (var k = 0; k < dots.length; k++) dots[k].classList.toggle('active', k === current);
+    clearInterval(timer);
+    timer = setInterval(function() { goTo(current + 1); }, 4500);
   }
 
-  function updateNextBtn(idx) {
-    var btn = document.getElementById('slot-next-' + idx);
-    if (btn) btn.disabled = false;
-  }
+  document.getElementById('slide-prev').onclick = function() { goTo(current - 1); };
+  document.getElementById('slide-next').onclick = function() { goTo(current + 1); };
 
-  function markSlotDone(slotIdx, sel) {
-    var badge = document.getElementById('slot-badge-' + slotIdx);
-    if (badge) { badge.textContent = '✓ تم'; badge.classList.add('done'); }
-    var nameEl = document.getElementById('slot-name-' + slotIdx);
-    if (nameEl) nameEl.textContent = sel.name;
+  var hs = document.getElementById('hero-slider');
+  hs.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, {passive:true});
+  hs.addEventListener('touchend', function(e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+  }, {passive:true});
 
-    var header = document.querySelector('#slot-' + slotIdx + ' .slot-header');
-    if (header) {
-      var existing = header.querySelector('.slot-preview, .slot-plus-btn');
-      if (existing) {
-        if (sel.img) {
-          var img = document.createElement('img');
-          img.className = 'slot-preview'; img.src = sel.img; img.alt = sel.name;
-          img.onerror = function() { this.style.background = 'var(--tint)'; this.src = ''; };
-          existing.replaceWith(img);
-        } else {
-          var ph = document.createElement('div');
-          ph.className = 'slot-plus-btn';
-          ph.style.cssText = 'background:rgba(22,163,74,.15);border-color:var(--green)';
-          ph.innerHTML = '<span style="font-size:20px">✏️</span>';
-          existing.replaceWith(ph);
-        }
-      }
-    }
-    var slotEl = document.getElementById('slot-' + slotIdx);
-    if (slotEl) slotEl.classList.add('filled');
-  }
+  timer = setInterval(function() { goTo(current + 1); }, 4500);
+})();
 
-  function resetSlotAppearance(idx) {
-    var badge = document.getElementById('slot-badge-' + idx);
-    if (badge) { badge.textContent = 'اختر'; badge.classList.remove('done'); }
-    var nameEl = document.getElementById('slot-name-' + idx);
-    if (nameEl) nameEl.textContent = 'انقر لاختيار العطر';
-    var slotEl = document.getElementById('slot-' + idx);
-    if (slotEl) slotEl.classList.remove('filled');
-    var header = document.querySelector('#slot-' + idx + ' .slot-header');
-    if (header) {
-      var existing = header.querySelector('.slot-preview, .slot-plus-btn');
-      if (existing) {
-        var plus = document.createElement('div');
-        plus.className = 'slot-plus-btn';
-        plus.id = 'slot-icon-' + idx;
-        plus.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dk)" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>';
-        existing.replaceWith(plus);
-      }
-    }
-  }
+/* ── AVIS — images only, no text, infinite auto-scroll ── */
+(function(){
+  var files = ['avis/1.png','avis/2.png','avis/3.png','avis/4.png'];
+  var track = document.getElementById('avis-track');
+  if (!track) return;
 
-  function openSlot(idx) {
-    closeAllSlots();
-    openSlotIdx = idx;
-    var target = document.getElementById('slot-' + idx);
-    if (target) {
-      target.classList.add('open');
-      setTimeout(function() { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 80);
-    }
-  }
-
-  function closeAllSlots() {
-    document.querySelectorAll('.picker-slot').forEach(function(s) { s.classList.remove('open'); });
-    openSlotIdx = -1;
-  }
-
-  function updateProgress() {
-    var pack   = PACKS[currentPack];
-    var filled = selections.filter(Boolean).length;
-    document.getElementById('prog-bar').style.width   = (filled / pack.count * 100) + '%';
-    document.getElementById('prog-label').textContent = filled + ' عطر مختار';
-    document.getElementById('prog-total').textContent = '/ ' + pack.count;
-  }
-
-  function updateSummary() {
-    var pack = PACKS[currentPack];
-    document.getElementById('sum-pack').textContent  = pack.name;
-    document.getElementById('sum-price').textContent = pack.priceLabel;
-    document.getElementById('sum-total').textContent = pack.priceLabel;
-    var el = document.getElementById('summary-perfs');
-    el.innerHTML = '';
-    selections.forEach(function(sel) {
-      if (!sel) return;
-      var t = document.createElement('span');
-      t.className = 'summary-perf-tag';
-      t.textContent = (sel.custom ? '✏️ ' : '') + sel.name;
-      el.appendChild(t);
-    });
-  }
-
-  /* ══ COUNTDOWN ══ */
-  (function() {
-    var el = document.getElementById('countdown');
-    var t  = 8 * 3600;
-    setInterval(function() {
-      t = t > 0 ? t - 1 : 8 * 3600;
-      var h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60;
-      el.textContent = [h, m, s].map(function(n) { return String(n).padStart(2, '0'); }).join(':');
-    }, 1000);
-  })();
-
-  /* ══ VALIDATION ══ */
-  function showErr(input, msg) {
-    clearErr(input);
-    input.style.borderColor = '#dc2626';
-    var e = document.createElement('span');
-    e.className = 'field-err'; e.textContent = msg;
-    input.after(e);
-  }
-  function clearErr(input) {
-    input.style.borderColor = '';
-    var prev = input.parentElement && input.parentElement.querySelector('.field-err');
-    if (prev) prev.remove();
-  }
-  ['f-name','f-address','f-city','f-phone'].forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('input', function() { clearErr(el); });
+  // Build cards twice for seamless loop
+  var all = files.concat(files);
+  all.forEach(function(src) {
+    var card = document.createElement('div');
+    card.className = 'avis-card';
+    var img = document.createElement('img');
+    img.src = src;
+    img.alt = '';
+    img.loading = 'lazy';
+    // If image fails, hide card
+    img.onerror = function() { card.style.display = 'none'; };
+    card.appendChild(img);
+    track.appendChild(card);
   });
 
-  function validate() {
-    var n = document.getElementById('f-name');
-    var a = document.getElementById('f-address');
-    var c = document.getElementById('f-city');
-    var p = document.getElementById('f-phone');
-    var ok = true;
-    if (!n.value.trim()) { showErr(n, 'يرجى إدخال اسمك'); ok = false; }
-    if (!a.value.trim()) { showErr(a, 'يرجى إدخال عنوانك'); ok = false; }
-    if (!c.value.trim()) { showErr(c, 'يرجى إدخال مدينتك'); ok = false; }
-    var tel = p.value.trim();
-    if (!tel) { showErr(p, 'يرجى إدخال رقم هاتفك'); ok = false; }
-    else if (!/^[0-9+\s\-]{8,15}$/.test(tel)) { showErr(p, 'رقم غير صحيح'); ok = false; }
-    return ok;
+  // Set animation duration: ~4s per card
+  track.style.animationDuration = (files.length * 4) + 's';
+
+  // Pause on hover/touch
+  track.addEventListener('touchstart', function() { track.style.animationPlayState = 'paused'; }, {passive:true});
+  track.addEventListener('touchend', function() { track.style.animationPlayState = 'running'; }, {passive:true});
+})();
+
+/* ── BEFORE / AFTER — line moves, images stay fixed ── */
+(function(){
+  var box = document.getElementById('compare-box');
+  var clip = document.getElementById('ba-clip');
+  var divider = document.getElementById('ba-divider');
+  if (!box || !clip || !divider) return;
+
+  var dragging = false;
+
+  function setPos(clientX) {
+    var rect = box.getBoundingClientRect();
+    var pct = ((clientX - rect.left) / rect.width) * 100;
+    pct = Math.max(2, Math.min(98, pct));
+    // Clip shows left/before portion
+    clip.style.width = pct + '%';
+    divider.style.left = pct + '%';
   }
 
-  function validateSel() {
-    var pack   = PACKS[currentPack];
-    var filled = selections.filter(Boolean).length;
-    if (filled < pack.count) {
-      showToast('⚠️ اختر ' + (pack.count - filled) + ' عطر(ات) إضافية', '#a07818');
-      document.getElementById('step-picker').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      for (var i = 0; i < pack.count; i++) {
-        if (!selections[i]) { openSlot(i); break; }
-      }
-      return false;
-    }
-    return true;
+  divider.addEventListener('mousedown', function(e) { dragging = true; e.preventDefault(); });
+  window.addEventListener('mouseup', function() { dragging = false; });
+  window.addEventListener('mousemove', function(e) { if (dragging) setPos(e.clientX); });
+
+  divider.addEventListener('touchstart', function(e) { dragging = true; e.preventDefault(); }, {passive:false});
+  window.addEventListener('touchend', function() { dragging = false; }, {passive:true});
+  window.addEventListener('touchmove', function(e) {
+    if (dragging) setPos(e.touches[0].clientX);
+  }, {passive:true});
+})();
+
+/* ── COUNTDOWN ── */
+(function(){
+  var el = document.getElementById('countdown');
+  if (!el) return;
+  var t = 8 * 3600;
+  setInterval(function() {
+    t = t > 0 ? t - 1 : 8 * 3600;
+    var h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60;
+    el.textContent = [h,m,s].map(function(n){return String(n).padStart(2,'0');}).join(':');
+  }, 1000);
+})();
+
+/* ── PACK ── */
+window.selectPack = function(k) {
+  currentPack = k;
+  document.getElementById('pack-duo').classList.toggle('chosen', k === 'duo');
+  document.getElementById('pack-solo').classList.toggle('chosen', k === 'solo');
+  var p = PACKS[k];
+  document.getElementById('sum-pack').textContent  = p.label;
+  document.getElementById('sum-price').textContent = p.price;
+  document.getElementById('sum-total').textContent = p.price;
+};
+
+/* ── FORM ── */
+function showErr(el, msg) {
+  clearErr(el);
+  el.style.borderColor = '#dc2626';
+  var e = document.createElement('span');
+  e.className = 'field-err'; e.textContent = msg;
+  el.after(e);
+}
+function clearErr(el) {
+  el.style.borderColor = '';
+  var prev = el.parentElement && el.parentElement.querySelector('.field-err');
+  if (prev) prev.remove();
+}
+['f-name','f-address','f-city','f-phone'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (el) el.addEventListener('input', function() { clearErr(el); });
+});
+
+function validate() {
+  var n = document.getElementById('f-name'),
+      a = document.getElementById('f-address'),
+      c = document.getElementById('f-city'),
+      p = document.getElementById('f-phone');
+  var ok = true;
+  if (!n.value.trim()) { showErr(n,'يرجى إدخال اسمك'); ok=false; }
+  if (!a.value.trim()) { showErr(a,'يرجى إدخال عنوانك'); ok=false; }
+  if (!c.value.trim()) { showErr(c,'يرجى إدخال مدينتك'); ok=false; }
+  var tel = p.value.trim();
+  if (!tel) { showErr(p,'يرجى إدخال رقم هاتفك'); ok=false; }
+  else if (!/^[0-9+\s\-]{8,15}$/.test(tel)) { showErr(p,'رقم غير صحيح'); ok=false; }
+  return ok;
+}
+
+document.getElementById('buy-btn').addEventListener('click', function() {
+  var btn = this;
+  if (!validate()) {
+    var fe = document.querySelector('.field-err');
+    if (fe) fe.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
   }
-
-  /* ══ SUBMIT ══ */
-  document.getElementById('buy-btn').addEventListener('click', async function() {
-    if (!validateSel()) return;
-    if (!validate()) {
-      var firstErr = document.querySelector('.field-err');
-      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
-
-    var pack = PACKS[currentPack];
-    var perfumeNames = selections.map(function(sel) {
-      return sel ? ((sel.custom ? '[مخصص] ' : '') + sel.name) : '';
-    });
-
-    var payload = {
-      timestamp:  new Date().toLocaleString('ar-MA'),
-      nom:        document.getElementById('f-name').value.trim(),
-      adresse:    document.getElementById('f-address').value.trim(),
-      ville:      document.getElementById('f-city').value.trim(),
-      telephone:  document.getElementById('f-phone').value.trim(),
-      pack:       pack.name,
-      volume:     pack.vol,
-      prix:       pack.priceLabel,
-      parfums:    perfumeNames.join(' · '),
-      nb_parfums: pack.count,
-      status:     'طلب جديد',
-    };
-
-    var btn = this, orig = btn.innerHTML;
-    btn.disabled = true; btn.textContent = 'جارٍ المعالجة…';
-
-    try {
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST', mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      document.getElementById('modal-text').innerHTML =
-        'شكراً <strong>' + payload.nom + '</strong>! تم تسجيل طقمك<br/>' +
-        '<em>' + pack.name + '</em> بنجاح.<br/>' +
-        'العطور: <strong>' + perfumeNames.join('، ') + '</strong><br/>' +
-        'سيتواصل معك فريقنا قريباً. 🎉';
-      openModal();
-
-      ['f-name','f-address','f-city','f-phone'].forEach(function(id) {
-        var el = document.getElementById(id);
-        if (el) el.value = '';
-      });
-    } catch(err) {
-      showToast('خطأ في الاتصال. حاول مرة أخرى.', '#dc2626');
-    } finally {
-      btn.disabled = false; btn.innerHTML = orig;
-    }
-  });
-
-  function openModal() {
-    document.getElementById('success-modal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  window.closeModal = function() {
-    document.getElementById('success-modal').classList.remove('open');
-    document.body.style.overflow = '';
+  var pack = PACKS[currentPack];
+  var payload = {
+    timestamp: new Date().toLocaleString('ar-MA'),
+    nom:       document.getElementById('f-name').value.trim(),
+    adresse:   document.getElementById('f-address').value.trim(),
+    ville:     document.getElementById('f-city').value.trim(),
+    telephone: document.getElementById('f-phone').value.trim(),
+    pack:      pack.label, prix: pack.price,
+    produit:   'Biopalis Dermalys', status: 'طلب جديد'
   };
-  document.getElementById('success-modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  var orig = btn.innerHTML;
+  btn.disabled = true; btn.textContent = 'جارٍ المعالجة…';
+  fetch(GOOGLE_SCRIPT_URL, {
+    method:'POST', mode:'no-cors',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify(payload)
+  }).then(function() {
+    document.getElementById('modal-text').innerHTML =
+      'شكراً <strong>'+payload.nom+'</strong>! تم تسجيل طلبك <em>'+pack.label+'</em> بنجاح.<br/>سيتصل بك فريقنا على الرقم <strong>'+payload.telephone+'</strong> لتأكيد التوصيل. 🎉';
+    openModal();
+    ['f-name','f-address','f-city','f-phone'].forEach(function(id){
+      var el=document.getElementById(id); if(el) el.value='';
+    });
+  }).catch(function() {
+    showToast('خطأ في الاتصال. حاول مرة أخرى.','#dc2626');
+  }).finally(function() {
+    btn.disabled = false; btn.innerHTML = orig;
+  });
+});
 
-  function showToast(msg, bg) {
-    var t = document.getElementById('toast');
-    t.textContent = msg; t.style.background = bg || '#1a1208';
-    t.classList.add('show');
-    setTimeout(function() { t.classList.remove('show'); }, 3500);
-  }
+function openModal()  { document.getElementById('success-modal').classList.add('open'); document.body.style.overflow='hidden'; }
+window.closeModal = function() { document.getElementById('success-modal').classList.remove('open'); document.body.style.overflow=''; };
+document.getElementById('success-modal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
 
-  buildPackDots();
-  selectPack('A');
+function showToast(msg, bg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.style.background = bg||'var(--navy)';
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 3500);
+}
+
 })();
 </script>
 </body>
